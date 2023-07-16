@@ -36,7 +36,7 @@ def main():
 
 @app.route('/')
 def home():
-    return 'Hello, Flask!'
+    return 'ひらいずみくじ!'
 
 
 if __name__ == '__main__':
