@@ -48,4 +48,3 @@ exit_button.pack(pady=10)
 
 root.mainloop()
 
-# Minori おなかすいた~~~
