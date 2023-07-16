@@ -1,4 +1,7 @@
 import random
+from flask import Flask
+app = Flask(__name__)
+
 
 def omikuji():
     fortunes = [
@@ -31,5 +34,11 @@ def main():
         else:
             print("Invalid input. Please try again.")
 
+@app.route('/')
+def home():
+    return 'Hello, Flask!'
+
+
 if __name__ == '__main__':
-    main()
+    app.run()
+
