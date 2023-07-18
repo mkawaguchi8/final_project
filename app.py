@@ -38,10 +38,37 @@ def show_omikuji():
     <html>
     <head>
         <title>おみくじアプリ</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5f5;
+            }
+
+            .omikuji-paper {
+                width: 400px;
+                margin: 50px auto;
+                background-color: #fef8e6;
+                border: 2px solid #d4af37;
+                padding: 20px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin-top: 0;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+        </style>
     </head>
     <body>
-        <h1>今日の運勢は「{}」です。</h1>
-        <h2>{}の運勢は「{}」です。{}</h2>
+        <div class="omikuji-paper">
+            <h1>今日の運勢は「{}」です。</h1>
+            <h2>{}の運勢は「{}」です。<br>{}。</h2>
+        </div>
     </body>
     </html>
     """.format(fortune, outcome, message, message)
