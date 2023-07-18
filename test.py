@@ -9,7 +9,7 @@ def generate_fortune():
         "吉": 30,
         "中吉": 25,
         "小吉": 15,
-        "凶": 20,
+        "凶": 20
     }
 
     outcomes = {
@@ -71,7 +71,7 @@ def show_omikuji():
         </div>
     </body>
     </html>
-    """.format(fortune, outcome, message,message)
+    """.format(fortune, outcome, message, message)
 
     return html
 
