@@ -1,7 +1,8 @@
 import random
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
+
 
 def generate_fortune():
     fortunes = {
@@ -9,7 +10,7 @@ def generate_fortune():
         "吉": 30,
         "中吉": 25,
         "小吉": 15,
-        "凶": 20,
+        "凶": 20
     }
 
     outcomes = {
@@ -24,56 +25,24 @@ def generate_fortune():
         "平泉運": ["順調な運勢です", "ちょっと停滞気味かもしれません", "前向きな気持ちで過ごしましょう"]
     }
 
-    fortune = random.choices(list(fortunes.keys()), weights=list(fortunes.values()), k=1)[0]
+    # Shuffle the list of fortunes
+    shuffled_fortunes = list(fortunes.keys())
+    random.shuffle(shuffled_fortunes)
+
+    fortune = shuffled_fortunes.pop()
+
     outcome = random.choice(list(outcomes.keys()))
     message = random.choice(outcomes[outcome])
 
     return fortune, outcome, message
 
-@app.route('/')
+
+
+@app.route("/")
 def show_omikuji():
     fortune, outcome, message = generate_fortune()
+    return render_template("result.html", fortune=fortune, outcome=outcome, message=message)
 
-    html = """
-    <html>
-    <head>
-        <title>おみくじアプリ</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f5f5f5;
-            }
 
-            .omikuji-paper {
-                width: 400px;
-                margin: 50px auto;
-                background-color: #fef8e6;
-                border: 2px solid #d4af37;
-                padding: 20px;
-                text-align: center;
-            }
-
-            h1 {
-                font-size: 24px;
-                margin-top: 0;
-            }
-
-            h2 {
-                font-size: 20px;
-                margin-bottom: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="omikuji-paper">
-            <h1>今日の運勢は「{}」です。</h1>
-            <h2>{}の運勢は「{}」です。<br>{}。</h2>
-        </div>
-    </body>
-    </html>
-    """.format(fortune, outcome, message,message)
-
-    return html
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()

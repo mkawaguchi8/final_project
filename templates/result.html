@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Hiraizu-mikuji</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .omikuji-paper {
+            width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            border: 2px solid #000;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .omikuji-paper:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
+            font-family: "Hiragino Mincho Pro", serif;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 0;
+            margin-top: 40px;
+            font-family: "Hiragino Mincho Pro", serif;
+        }
+
+        .omikuji-fortune {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e25822;
+            margin-bottom: 10px;
+            font-family: "Hiragino Maru Gothic Pro", sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="omikuji-paper">
+        <h1>今日のあなたの運勢は...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
+        <h2>{{message}}</h2>
+    </div>
+</body>
+</html>
