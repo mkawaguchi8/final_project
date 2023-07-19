@@ -32,6 +32,10 @@ def generate_fortune():
 
 
 @app.route("/")
+def hiku_omikuji():
+    return render_template("hiku.html")
+
+@app.route("/result")
 def show_omikuji():
     fortune, outcome, message = generate_fortune()
     return render_template("result.html", fortune=fortune, outcome=outcome, message=message)
