@@ -5,13 +5,7 @@ app = Flask(__name__)
 
 
 def generate_fortune():
-    fortunes = {
-        "大吉": 10,
-        "吉": 30,
-        "中吉": 25,
-        "小吉": 15,
-        "凶": 20
-    }
+    fortunes = {"大吉": 10, "吉": 30, "中吉": 25, "小吉": 15, "凶": 20}
 
     outcomes = {
         "願望": ["叶うでしょう", "なかなか叶わないかもしれません", "途中で諦めずに頑張りましょう"],
@@ -22,7 +16,7 @@ def generate_fortune():
         "学問": ["順調に進展するでしょう", "少し苦労するかもしれません", "諦めずに頑張りましょう"],
         "争事": ["円満に解決するでしょう", "少しトラブルが起きるかもしれません", "冷静な判断を心がけましょう"],
         "恋愛": ["素敵な出会いがあるでしょう", "恋の運気は少し低めかもしれません", "自分に自信を持ちましょう"],
-        "平泉運": ["順調な運勢です", "ちょっと停滞気味かもしれません", "前向きな気持ちで過ごしましょう"]
+        "平泉運": ["順調な運勢です", "ちょっと停滞気味かもしれません", "前向きな気持ちで過ごしましょう"],
     }
 
     # Shuffle the list of fortunes
@@ -37,7 +31,6 @@ def generate_fortune():
     return fortune, outcome, message
 
 
-
 @app.route("/")
 def show_omikuji():
     fortune, outcome, message = generate_fortune()
@@ -45,4 +38,4 @@ def show_omikuji():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=8000, debug=True)
