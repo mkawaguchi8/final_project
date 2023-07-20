@@ -114,10 +114,6 @@ def generate_fortune():
     )
 
 
-@app.route("/")
-def hiku_omikuji():
-    return render_template("hiku.html")
-
 @app.route("/result")
 def show_omikuji():
     (
@@ -148,4 +144,4 @@ def show_omikuji():
 
 
 if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+    app.run(port=8002, debug=True)
