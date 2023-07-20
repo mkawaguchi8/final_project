@@ -113,6 +113,11 @@ def generate_fortune():
     )
 
 
+@app.route("/top")
+def show_top():
+    return render_template("index.html")
+
+
 @app.route("/result")
 def show_omikuji():
     (
