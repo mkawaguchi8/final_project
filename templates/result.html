@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Hiraizu-mikuji</title>
     <style>
@@ -6,7 +7,7 @@
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
         }
-        
+
         .omikuji-paper {
             width: 400px;
             margin: 50px auto;
@@ -51,6 +52,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="omikuji-paper">
         <h1>今日のあなたの運勢は...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
@@ -64,35 +66,40 @@
         <h2>恋愛: {{outcome_8}}</h2>
         <h2>平泉運: {{outcome_9}}</h2>
     </div>
+    <form action="/next" method="POST">
+        <input type="hidden" name="fortune" value={{fortune}}>
+        <input type="submit" value="次へ">
+    </form>
 </body>
 
 
 
 
 <script>
-        function pullOmikuji() {
-            const paper = document.querySelector('.omikuji-paper');
-            paper.classList.add('clicked');
+    function pullOmikuji() {
+        const paper = document.querySelector('.omikuji-paper');
+        paper.classList.add('clicked');
 
-            setTimeout(function() {
-                // Make an AJAX request to the server to get the omikuji result
-                fetch('/omikuji')
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(data) {
-                        // Update the fortune result in the HTML
-                        document.querySelector('.fortune').textContent = data.fortune;
-                        document.querySelector('.outcome').textContent = data.outcome;
-                        document.querySelector('.message').textContent = data.message;
+        setTimeout(function () {
+            // Make an AJAX request to the server to get the omikuji result
+            fetch('/omikuji')
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    // Update the fortune result in the HTML
+                    document.querySelector('.fortune').textContent = data.fortune;
+                    document.querySelector('.outcome').textContent = data.outcome;
+                    document.querySelector('.message').textContent = data.message;
 
-                        // Reset the clicked state
-                        paper.classList.remove('clicked');
-                    })
-                    .catch(function(error) {
-                        console.error('Error:', error);
-                    });
-            }, 500); // Delay for 0.5 seconds (500 milliseconds)
-        }
-    </script>
+                    // Reset the clicked state
+                    paper.classList.remove('clicked');
+                })
+                .catch(function (error) {
+                    console.error('Error:', error);
+                });
+        }, 500); // Delay for 0.5 seconds (500 milliseconds)
+    }
+</script>
+
 </html>
