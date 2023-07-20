@@ -1,5 +1,5 @@
 import random
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -73,7 +73,6 @@ def generate_fortune():
     random.shuffle(shuffled_fortunes)
 
     fortune = shuffled_fortunes.pop()
-    print(fortune)
 
     if fortune == "大吉":
         key = 0
@@ -141,6 +140,25 @@ def show_omikuji():
         outcome_8=outcome_8,
         outcome_9=outcome_9,
     )
+
+
+@app.route("/next", methods=["POST"])
+def show_next():
+    fortune = request.form["fortune"]
+
+    if fortune == "大吉":
+        text = "晴れの日に食べるものと言えば、餅御膳！平泉では郷土料理としておもちが有名です。平泉でおもちを食べて、「大吉」のお祝いをしましょう！おめでどーごし※主なもち食提供店一覧 URL"
+
+    return render_template("petit_info.html", fortune=fortune, text=text)
+
+
+# プチ情報
+@app.route("/omikuji")
+def omikuji():
+    # 変数を作成
+    result = "大吉!!"
+    # テンプレートでresult変数を使用する
+    return render_template("omikuji.html", result=result)
 
 
 if __name__ == "__main__":
