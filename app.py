@@ -170,4 +170,4 @@ def show_next():
 
 
 if __name__ == "__main__":
-    app.run(port=8002, debug=True)
+    app.run(debug=True, host="0.0.0.0")
