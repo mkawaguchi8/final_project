@@ -1,21 +1,14 @@
-"<!DOCTYPE html>
-<html lang=""ja"">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset=""UTF-8"">
-    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
-    <title>おみくじ</title>
+        <title>Hiraizu-mikuji</title>
 </head>
+
 <body>
-    <p>今日の運勢は ...  {{ result }}</p>
-
-    {% if result == ""大吉!!"" %}
-            <p>やったね!</p>
-    {% elif result == ""吉!!"" %}
-            <p>まあまあ</p>
-    {% elif result == ""凶..."" %}
-            <p>ざんねん！</p>
-    {% endif %}
-    
-
+        <div class="photo">
+                <img src="../static/top_image.png" alt="トップ" width="390" height="693">
+        </div>
 </body>
-</html>"
+
+</html>
