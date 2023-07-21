@@ -65,7 +65,7 @@ def generate_fortune():
             "There won't be any sudden changes.",
             "By self-reflection, you may be able to repair the relationship soon.",
         ],
-        "【平泉運】": ["考え中", "考え中", "考え中", "考え中", "考え中"],
+        # "【平泉運】": ["考え中", "考え中", "考え中", "考え中", "考え中"],
     }
 
     # Shuffle the list of fortunes
@@ -97,7 +97,7 @@ def generate_fortune():
     outcome_6 = outcomes["【ACADEMICS】"][key]
     outcome_7 = outcomes["【CONFLICT】"][key]
     outcome_8 = outcomes["【ROMANCE】"][key]
-    outcome_9 = outcomes["【平泉運】"][key]
+    # outcome_9 = outcomes["【平泉運】"][key]
 
     return (
         fortune,
@@ -109,7 +109,7 @@ def generate_fortune():
         outcome_6,
         outcome_7,
         outcome_8,
-        outcome_9,
+        # outcome_9,
     )
 
 
@@ -125,7 +125,7 @@ def show_omikuji():
         outcome_6,
         outcome_7,
         outcome_8,
-        outcome_9,
+        # outcome_9,
     ) = generate_fortune()
     return render_template(
         "resulteng.html",
@@ -138,7 +138,7 @@ def show_omikuji():
         outcome_6=outcome_6,
         outcome_7=outcome_7,
         outcome_8=outcome_8,
-        outcome_9=outcome_9,
+        # outcome_9=outcome_9,
     )
 
 
