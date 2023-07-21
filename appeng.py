@@ -11,7 +11,7 @@ def generate_fortune():
         "【DESIRE】": [
             "You will be able to build an ideal world like Fujiwara-no-Kiyohira.",
             "By taking proactive actions, you will be able to pave the way to success.",
-            "If you don't neglect feelings of gratitude, joy will occur.",
+            "If you accept the feelings of gratitude, joy will occur.",
             "Effort and hard work are necessary, but no rushing.",
             "To overcome difficulties, face them with support from others.",
         ],
@@ -161,7 +161,7 @@ def show_next():
     else:
         text = "Let's gaze at the sunset sinking behind Mount Kinkazan from Muryokoin, one of the World Heritage sites. It will surely purify our hearts. Enjoy the moment!"
 
-    return render_template("petit_info.html", fortune=fortune, text=text)
+    return render_template("petit_infoeng.html", fortune=fortune, text=text)
 
 
 if __name__ == "__main__":

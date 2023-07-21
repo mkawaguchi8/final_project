@@ -1,11 +1,11 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>Hiraizu-mikuji</title>
     <style>
         body {
             font-family: "Hiragino Mincho Pro", serif;
-            
+            font-size: 16px;
         }
 
         .box {
@@ -13,14 +13,14 @@
         }
 
         div {
-            width:325px;
-            /* height:250px; */
-            background-color:#fff;
+            width: 325px;
+            /* height: 250px; */
+            background-color: #fff;
             background-image: radial-gradient(closest-side, transparent 98%, #c44e37 99%),
             radial-gradient(closest-side, transparent 98%, #c44e37 99%);
-            background-size:80px 80px;
-            background-position:0 0, 40px 40px;
-            }
+            background-size: 80px 80px;
+            background-position: 0 0, 40px 40px;
+        }
 
         .omikuji-paper {
             width: 400px;
@@ -44,7 +44,7 @@
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 24px;
             margin-top: 20px;
             font-family: "Hiragino Mincho Pro", serif;
         }
@@ -54,38 +54,44 @@
             display: inline-block;
             white-space: normal;
             margin: 10px 0;
+            font-size: 14px;
         }
 
         .omikuji-fortune {
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
             color: #e25822;
             margin-bottom: 10px;
             font-family: "Hiragino Mincho Pro", serif;
+        }
+
+        /* New class to style the title words in red */
+        .title-word {
+            color: #e25822;
         }
     </style>
 </head>
 
 <body>
     <div class="omikuji-paper">
-    <div style="border:2px solid #f4978e; padding:16px; margin:20px; background:white;">
-            <h1>Today's fortune for you is...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
-            <h2 class="vertical-text">【DESIRE】{{outcome_1}}</h2>
-            <h2 class="vertical-text">【HEALTH】{{outcome_2}}</h2>
-            <h2 class="vertical-text">【LOST PROPERTY】{{outcome_3}}</h2>
-            <h2 class="vertical-text">【TRAVEL】{{outcome_4}}</h2>
-            <h2 class="vertical-text">【BUSINESS】{{outcome_5}}</h2>
-            <h2 class="vertical-text">【ACADEMICS】{{outcome_6}}</h2>
-            <h2 class="vertical-text">【CONFLICT】{{outcome_7}}</h2>
-            <h2 class="vertical-text">【ROMANCE】{{outcome_8}}</h2>
-            <h2 class="vertical-text">【平泉運】{{outcome_9}}</h2>
-        </div></div>
+        <div style="border: 2px solid #f4978e; padding: 16px; margin: 20px; background:white;">
+            <h1>Your fortune today is...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
+            <h2 class="vertical-text"><span class="title-word">【DESIRE】</span><br>{{outcome_1}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【HEALTH】</span><br>{{outcome_2}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【LOST PROPERTY】</span><br>{{outcome_3}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【TRAVEL】</span><br>{{outcome_4}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【BUSINESS】</span><br>{{outcome_5}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【ACADEMICS】</span><br>{{outcome_6}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【CONFLICT】</span><br>{{outcome_7}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【ROMANCE】</span><br>{{outcome_8}}</h2>
+            <h2 class="vertical-text"><span class="title-word">【平泉運】</span><br>{{outcome_9}}</h2>
+        </div>
+    </div>
     <form action="/next" method="POST">
         <input type="hidden" name="fortune" value={{fortune}}>
         <input type="submit" value="次へ">
     </form>
 </body>
-
 
 <script>
     function pullOmikuji() {
@@ -113,5 +119,4 @@
         }, 500); // Delay for 0.5 seconds (500 milliseconds)
     }
 </script>
-
 </html>
