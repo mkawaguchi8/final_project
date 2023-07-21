@@ -8,29 +8,66 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%;/*rem算出をしやすくするために*/
+  font-size: 62.5%;
+  /*rem算出をしやすくするために*/
 }
 
+.photo {
+  /* background-image: url(../top_image.png);
+  background-size: cover;
+  background-position: center; */
+  /* width: 100%;
+  height: 1000px; */
+  position: relative;
+}
+
+.photo img {
+  width: 100vw;
+}
 
 a.btn--orange {
   color: #fff;
   background-color: #7b1439;
   border-bottom: 5px solid #7b1439;
   display: block;
-  height: 40px;
-  width: 240px; /* Set the desired width of the button */
-  margin: 0 auto; /* This will center the button horizontally */
-  text-align: center; /* This will center the text inside the button */
+  /* height: 40px; */
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 110px;
   font-family: "kaisei tokumin", sans-serif;
-  font-size: 18px;
+  font-size: 50px;
   text-decoration: unset;
+  position: absolute;
+  top: 38.5%;
+  left: 15%;
 }
+
+a.btn--language {
+  color: #fff;
+  background-color: #7b1439;
+  border-bottom: 5px solid #7b1439;
+  display: block;
+  /* height: 40px; */
+  width: 42.2%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 75px;
+  font-family: "kaisei tokumin", sans-serif;
+  font-size: 50px;
+  text-decoration: unset;
+  position: absolute;
+  left: 59.5%;
+  bottom: 0.4%;
+}
+
 a.btn--orange:hover {
   margin-top: 3px;
   color: #fff;
   background: #7b1439;
   border-bottom: 2px solid #7b1439;
 }
+
 a.btn--shadow {
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
   box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
