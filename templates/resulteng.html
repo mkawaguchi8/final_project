@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../static/css/result_style.css" />
     <title>Hiraizu-mikuji</title>
     <style>
         body {
@@ -60,14 +61,14 @@
         .omikuji-fortune {
             font-size: 28px;
             font-weight: bold;
-            color: #c72920;
+            color: #e25822;
             margin-bottom: 10px;
             font-family: "Hiragino Mincho Pro", serif;
         }
 
         /* New class to style the title words in red */
         .title-word {
-            color: #7b1439;
+            color: #e25822;
         }
     </style>
 </head>
@@ -89,7 +90,9 @@
     </div>
     <form action="/next" method="POST">
         <input type="hidden" name="fortune" value="{{fortune}}">
-        <input type="submit" value="next">
+        <div class="button_2">
+            <input type="submit" value="Recommended informaiton of Hiraizumi"  class="button">
+        </div>
     </form>
 </body>
 
