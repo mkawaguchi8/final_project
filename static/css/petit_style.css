@@ -16,7 +16,7 @@ omikuji-paper{
   margin:0;
 }
 
-.photo{
+/* .photo{
   background-image: url();
   background-size: cover;
   background-position: center;
@@ -24,4 +24,39 @@ omikuji-paper{
   height: 1000px;
   position: relative;
 
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.photo {
+    position: relative;
+    width: 60%; /* Adjust the width of the image container as per your preference */
+    max-width: 800px; /* Optional: Set a maximum width for the image container */
+    margin: 0 auto; /* Center the image container horizontally */
+}
+
+.photo img {
+  width: 100vw;
+}
+
+.petit_div {
+    position: absolute;
+    top: 40%;
+    left: 2%;
+    right: 0;
+    transform: translate(0, -50%);
+    border: 2px solid #7b1439;
+    padding: 16px;
+    background: white;
+    z-index: 1;
+    font-size: 40px;
+}
+
+/* Additional styles */
+.petit_div h1,
+.petit_div h2 {
+    text-align: center;
 }

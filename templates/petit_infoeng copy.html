@@ -4,9 +4,34 @@
 <head>
     <title>Hiraizu-mikuji</title>
     <style>
-    .omikuji-fortune{
-        color: #e25822;
-    }
+        body {
+            width: 165%;
+        }
+
+        /* Set the container div to relative position */
+        .photo {
+            position: relative;
+        }
+
+        /* Position the text div over the image */
+        .petit_div {
+            position: absolute;
+            top: 40%;
+            left: 2%;
+            right: 0;
+            transform: translate(0, -50%);
+            border: 2px solid #7b1439;
+            padding: 16px;
+            background: white;
+            z-index: 1;
+            font-size: 40px;
+        }
+
+        /* Additional styles */
+        .petit_div h1,
+        .petit_div h2 {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -14,12 +39,11 @@
     <div class="omikuji-paper">
         <div class="photo">
             <img src="../static/{{photo}}">
-        </div>
-        <div class="petit_div">
-                <h1>Your fortune today is...「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
+            <div class="petit_div">
+                <h1>Your fortune today is...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
                 <h2>{{text}}</h2>
+            </div>
         </div>
-        
     </div>
 </body>
 
