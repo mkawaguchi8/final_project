@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../static/css/result_style.css" />
     <title>Hiraizu-mikuji</title>
@@ -13,12 +14,12 @@
             text-align: left;
         }
 
-        div {
+        .omikuji-paper {
             width: 325px;
             /* height: 250px; */
             background-color: #fff;
             background-image: radial-gradient(closest-side, transparent 98%, #7b1439 99%),
-            radial-gradient(closest-side, transparent 98%, #7b1439 99%);
+                radial-gradient(closest-side, transparent 98%, #7b1439 99%);
             background-size: 80px 80px;
             background-position: 0 0, 40px 40px;
         }
@@ -91,7 +92,7 @@
     <form action="/next_eng" method="POST">
         <input type="hidden" name="fortune" value="{{fortune}}">
         <div class="button_2">
-            <input type="submit" value="Recommended Information of Hiraizumi"  class="button">
+            <input type="submit" value="Recommended Information of Hiraizumi" class="button">
         </div>
     </form>
 </body>
@@ -122,4 +123,5 @@
         }, 500); // Delay for 0.5 seconds (500 milliseconds)
     }
 </script>
+
 </html>
