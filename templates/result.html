@@ -33,8 +33,8 @@
             width: 325px;
             /* height:250px; */
             background-color: #fff;
-            background-image: radial-gradient(closest-side, transparent 98%, #c44e37 99%),
-                radial-gradient(closest-side, transparent 98%, #c44e37 99%);
+            background-image: radial-gradient(closest-side, transparent 98%, #7b1439 99%),
+                radial-gradient(closest-side, transparent 98%, #7b1439 99%);
             background-size: 80px 80px;
             background-position: 0 0, 40px 40px;
         }
@@ -76,7 +76,7 @@
         .omikuji-fortune {
             font-size: 36px;
             font-weight: bold;
-            color: #e25822;
+            color: #c72920;
             margin-bottom: 10px;
             font-family: "Hiragino Mincho Pro", serif;
         }
@@ -85,16 +85,16 @@
 
 <body>
     <div class="omikuji-paper">
-        <div style="border:2px solid #f4978e; padding:16px; margin:20px; background:white;">
+        <div style="border:2px solid #7b1439; padding:16px; margin:20px; background:white;">
             <h1>今日のあなたの運勢は...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
-            <h2 class="vertical-text">【願望】{{outcome_1}}</h2>
+            <h2 class="vertical-text">【恋愛】{{outcome_1}}</h2>
             <h2 class="vertical-text">【健康】{{outcome_2}}</h2>
             <h2 class="vertical-text">【失物】{{outcome_3}}</h2>
             <h2 class="vertical-text">【旅行】{{outcome_4}}</h2>
             <h2 class="vertical-text">【商売】{{outcome_5}}</h2>
             <h2 class="vertical-text">【学問】{{outcome_6}}</h2>
             <h2 class="vertical-text">【争事】{{outcome_7}}</h2>
-            <h2 class="vertical-text">【恋愛】{{outcome_8}}</h2>
+            <h2 class="vertical-text">【願望】{{outcome_8}}</h2>
             <!-- <h2 class="vertical-text">【平泉運】{{outcome_9}}</h2> -->
         </div></div>
     <form action="/next" method="POST">
