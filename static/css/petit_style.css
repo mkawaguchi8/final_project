@@ -1,4 +1,4 @@
-.photo{
+/* .photo{
   width:600px;
   height: 600px;
   position: relative;
@@ -6,7 +6,7 @@
 
 .photo img{
   width:100%;
-}
+} */
 
 omikuji-paper{
   position: absolute;
@@ -16,7 +16,7 @@ omikuji-paper{
   margin:0;
 }
 
-/* .photo{
+.photo{
   background-image: url();
   background-size: cover;
   background-position: center;
@@ -24,4 +24,4 @@ omikuji-paper{
   height: 1000px;
   position: relative;
 
-} */
+}
