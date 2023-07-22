@@ -154,23 +154,23 @@ def show_next():
 
     if fortune == "大吉":
         text = "晴れの日に食べるものと言えば、餅御膳！平泉では郷土料理としておもちが有名です。平泉でおもちを食べて、「大吉」のお祝いをしましょう！おめでどーごし※主なもち食提供店一覧 URL"
-        photo = "superbluck_petitinfo.JPG"
+        photo = "superbluck_petitinfo.jpg"
 
     elif fortune == "吉":
         text = "105年以上平泉で愛され続けてきた「弁慶の力餅」を食べて､内なるエネルギーを蓄えましょう！※お土産屋さんや駅で見つけることができます｡本店は中尊寺通りへ｡"
-        photo = "goodluck_petitinfo.JPG"
+        photo = "goodluck_petitinfo.jpg"
 
     elif fortune == "中吉":
         text = "かつては京都についで2番目に栄えていたと言われる平泉｡心が平穏になれる静かな平泉を感じられるスポットで､平泉の空気を思いっきり吸ってみましょう｡おすすめスポット"
-        photo = "fairygluck_petitinfo.JPG"
+        photo = "fairygluck_petitinfo.jpg"
 
     elif fortune == "小吉":
         text = "平泉で四季を感じるスポットへ行ってみましょう｡ きっと平泉の極楽浄土を感じられることでしょう｡ おすすめ平泉の四季 夏: 高舘から望む北上川と山 秋: 毛越寺の紅葉"
-        photo = "smallluck_petitinfo.JPG"
+        photo = "smallluck_petitinfo.jpg"
 
     else:
         text = "世界遺産の一つである無量光院から金鶏山に沈む夕日を眺めてみましょう｡きっと心が浄化されることでしょう｡けっぱれ~！"
-        photo = "badluck_petitinfo.JPG"
+        photo = "badluck_petitinfo.jpg"
 
     return render_template("petit_info.html", fortune=fortune, text=text, photo=photo)
 
@@ -324,23 +324,23 @@ def show_next_eng():
 
     if fortune == "Superb Luck":
         text = "Speaking of what to eat on a sunny day, it's mochi gozen! In Hiraizumi, mochi (rice cakes) is famous as a local dish. Let's have mochi in Hiraizumi and celebrate with Great Fortune! Congratulations!"
-        photo = "superbluck_petitinfo.JPG"
+        photo = "superbluck_petitinfo.jpg"
 
     elif fortune == "Good Luck":
         text = "Let's eat Benkei-no-Chikara-Mochi, which has been loved in Hiraizumi for over 105 years, and store your inner energy! You can find it at souvenir shops or the station. The main store is located on Chusonji Street."
-        photo = "goodluck_petitinfo.JPG"
+        photo = "goodluck_petitinfo.jpg"
 
     elif fortune == "Fairly Good Luck":
         text = "Hiraizumi, once said to be the second most prosperous city after Kyoto. Let's feel the serene and quiet atmosphere of Hiraizumi, where our hearts can find tranquility. Take a deep breath of Hiraizumi's air and immerse yourself in its essence. Recommended to visit Genbikei Gorge and Mount Kinkeisan."
-        photo = "fairygluck_petitinfo.JPG"
+        photo = "fairygluck_petitinfo.jpg"
 
     elif fortune == "Small Luck":
         text = "Let's visit the spots in Hiraizumi to experience the four seasons. You will surely feel the blissful paradise of Hiraizumi. Recommended to see the view of the Kitakami River and the mountains from Takadate in the summer, as well as the leaf foliage at Motsuji Temple in the fall."
-        photo = "smallluck_petitinfo.JPG"
+        photo = "smallluck_petitinfo.jpg"
 
     else:
         text = "Let's gaze at the sunset sinking behind Mount Kinkazan from Muryokoin, one of the World Heritage sites. It will surely purify our hearts. Enjoy the moment!"
-        photo = "badluck_petitinfo.JPG"
+        photo = "badluck_petitinfo.jpg"
 
     return render_template("petit_infoeng.html", fortune=fortune, text=text, photo=photo)
 
