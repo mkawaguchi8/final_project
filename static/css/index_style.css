@@ -31,11 +31,11 @@ a.btn--orange {
   border-bottom: 5px solid #7b1439;
   display: block;
   /* height: 40px; */
-  width: 70%; 
+  width: 70%;
   margin: 0 auto;
   text-align: center;
   line-height: 110px;
-  font-family: "kaisei tokumin", sans-serif;
+  font-family: "Arial", "メイリオ";
   font-size: 50px;
   text-decoration: unset;
   position: absolute;
@@ -53,7 +53,7 @@ a.btn--language {
   margin: 0 auto;
   text-align: center;
   line-height: 75px;
-  font-family: "kaisei tokumin", sans-serif;
+  font-family: "Arial", "メイリオ";
   font-size: 50px;
   text-decoration: unset;
   position: absolute;
