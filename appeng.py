@@ -160,7 +160,7 @@ def show_next():
 
     else:
         text = "Let's gaze at the sunset sinking behind Mount Kinkazan from Muryokoin, one of the World Heritage sites. It will surely purify our hearts. Enjoy the moment!"
-
+    print(fortune)
     return render_template("petit_infoeng.html", fortune=fortune, text=text)
 
 
