@@ -3,6 +3,10 @@
 <head>
     <title>Hiraizu-mikuji</title>
     <style>
+        .photo {
+            position: relative;
+        }
+
         body {
             font-family: "Hiragino Mincho Pro", serif;
             font-size: 16px;
@@ -73,15 +77,14 @@
 </head>
 
 <body>
-    
     <div class="omikuji-paper">
+    <div class="photo">
+        <img src="../static/{{photo}}">
     <div style="border: 2px solid #7b1439; padding: 16px; margin: 20px; background:white;">
         <h1>今日のあなたの運勢は...<br>「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
         <h2>{{text}}</h2>
     </div>
     </div>
-        <div class="photo">
-        <img src="../static/{{photo}}">
     </div>
 </body>
 
