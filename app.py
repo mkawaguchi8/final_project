@@ -64,7 +64,6 @@ def generate_fortune():
             "感謝の気持ちを怠らなければ喜び事が起きるでしょう",
             "努力や頑張りは必要ですが、焦る必要はありません",
             "困難を乗り越えるために、支えてくれる人々の力を借りて立ち向かいましょう",
-
         ],
         # "【平泉運】": ["考え中", "考え中", "考え中", "考え中", "考え中"],
     }
@@ -154,6 +153,7 @@ def show_next():
 
     if fortune == "大吉":
         text = "晴れの日に食べるものと言えば、餅御膳！平泉では郷土料理としておもちが有名です。平泉でおもちを食べて、「大吉」のお祝いをしましょう！おめでどーごし※主なもち食提供店一覧 URL"
+        photo = "goodluck_petitinfo.JPG"
 
     elif fortune == "吉":
         text = "105年以上平泉で愛され続けてきた「弁慶の力餅」を食べて､内なるエネルギーを蓄えましょう！※お土産屋さんや駅で見つけることができます｡本店は中尊寺通りへ｡"
@@ -167,7 +167,7 @@ def show_next():
     else:
         text = "世界遺産の一つである無量光院から金鶏山に沈む夕日を眺めてみましょう｡きっと心が浄化されることでしょう｡けっぱれ~！"
 
-    return render_template("petit_info.html", fortune=fortune, text=text)
+    return render_template("petit_info.html", fortune=fortune, text=text, photo=photo)
 
 
 if __name__ == "__main__":
