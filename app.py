@@ -114,10 +114,9 @@ def generate_fortune():
 
 
 # Define the route for the index page
-@app.route('/top')
+@app.route("/top")
 def show_top():
-    return render_template('index.html')
-
+    return render_template("index.html")
 
 
 @app.route("/result")
@@ -285,6 +284,11 @@ def generate_fortune_eng():
     )
 
 
+@app.route("/top_eng")
+def show_top_eng():
+    return render_template("indexeng.html")
+
+
 @app.route("/result_eng")
 def show_omikuji_eng():
     (
@@ -314,7 +318,7 @@ def show_omikuji_eng():
     )
 
 
-@app.route("/next", methods=["POST"])
+@app.route("/next_eng", methods=["POST"])
 def show_next_eng():
     fortune = request.form["fortune"]
 
@@ -336,6 +340,5 @@ def show_next_eng():
     return render_template("petit_infoeng.html", fortune=fortune, text=text)
 
 
-
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8002)
+    app.run(debug=True, host="0.0.0.0", port=8000)
