@@ -28,9 +28,9 @@
 .button:hover {
     box-shadow: none;
     /* カーソル時の影消去 */
-    color: #000066;
+    color: #ffffff;
     /* 背景色     */
-    background: #ffffff;
+    background: #7b1439;
     /* 文字色     */
 }
 
