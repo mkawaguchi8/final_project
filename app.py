@@ -164,13 +164,13 @@ def show_next():
     fortune = request.form["fortune"]
 
     if fortune == "大吉":
-        text = "晴れの日に食べるものと言えば、餅御膳！\n平泉では郷土料理としておもちが有名です。\n平泉でおもちを食べて、「大吉」のお祝いをしましょう！\nおめでどーごし!\n主なもち料理提供店一覧: "
+        text = "晴れの日に食べるものと言えば、餅御膳！\n平泉では郷土料理としておもちが有名です。\n平泉でおもちを食べて、「大吉」のお祝いをしましょう！\nおめでどーごし!\n主なもち料理提供店一覧:"
         url = "https://hiraizu-meets.com/gourmet/"  # 実際のURLに置き換えてください
         # text = text.format(url)
         photo = "superbluck_petitinfo.jpg"
 
     elif fortune == "吉":
-        text = "105年以上平泉で愛され続けてきた「弁慶の力餅」を食べて､\n内なるエネルギーを蓄えましょう！\n※お土産屋さんや駅で見つけることができます｡\n本店は中尊寺通りへ｡"
+        text = "105年以上平泉で愛され続けてきた「弁慶力餅」を食べて､\n内なるエネルギーを蓄えましょう！\n※お土産屋さんや駅で見つけることができます｡\n本店は中尊寺通りへ｡"
         photo = "goodluck_petitinfo.jpg"
         url = ""
 
@@ -178,7 +178,7 @@ def show_next():
         text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\nおすすめスポット一覧 ***"
         photo = "fairygluck_petitinfo.jpg"
         url = ""
-        
+                
     elif fortune == "小吉":
         text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季\n 夏: 高舘から望む北上川と山\n秋: 毛越寺の紅葉"
         photo = "smallluck_petitinfo.jpg"
