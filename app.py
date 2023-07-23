@@ -65,7 +65,7 @@ def generate_fortune():
             "努力や頑張りは必要ですが、焦る必要はありません",
             "困難を乗り越えるために、支えてくれる人々の力を借りて立ち向かいましょう",
         ],
-        # "【平泉運】": ["考え中", "考え中", "考え中", "考え中", "考え中"],
+        "【スパルタキャンプ運】": ["お疲れ様です！", "お疲れ様です！", "お疲れ様です！", "お疲れ様です！", "お疲れ様です！"],
     }
 
     # Shuffle the list of fortunes
@@ -97,7 +97,7 @@ def generate_fortune():
     outcome_6 = outcomes["【学問】"][key]
     outcome_7 = outcomes["【争事】"][key]
     outcome_8 = outcomes["【願望】"][key]
-    # outcome_9 = outcomes["【平泉運】"][key]
+    outcome_9 = outcomes["【スパルタキャンプ運】"][key]
 
     return (
         fortune,
@@ -109,7 +109,7 @@ def generate_fortune():
         outcome_6,
         outcome_7,
         outcome_8,
-        # outcome_9,
+        outcome_9,
     )
 
 
@@ -136,7 +136,7 @@ def show_omikuji():
         outcome_6,
         outcome_7,
         outcome_8,
-        # outcome_9,
+        outcome_9,
     ) = generate_fortune()
     return render_template(
         "result.html",
@@ -149,7 +149,7 @@ def show_omikuji():
         outcome_6=outcome_6,
         outcome_7=outcome_7,
         outcome_8=outcome_8,
-        # outcome_9=outcome_9,
+        outcome_9=outcome_9,
     )
 
 
@@ -158,15 +158,17 @@ def show_next():
     fortune = request.form["fortune"]
 
     if fortune == "大吉":
-        text = "晴れの日に食べるものと言えば、餅御膳！平泉では郷土料理としておもちが有名です。\n平泉でおもちを食べて、「大吉」のお祝いをしましょう！\nおめでどーごし\n主なもち食提供店一覧 URL"
+        text = "晴れの日に食べるものと言えば、餅御膳！\n平泉では郷土料理としておもちが有名です。\n平泉でおもちを食べて、「大吉」のお祝いをしましょう！\nおめでどーごし\n主なもち食提供店一覧 URL: {}"
+        url = "https://hiraizu-meets.com/gourmet/"  # 実際のURLに置き換えてください
+        text = text.format(url)
         photo = "superbluck_petitinfo.jpg"
 
     elif fortune == "吉":
-        text = "105年以上平泉で愛され続けてきた「弁慶の力餅」を食べて､内なるエネルギーを蓄えましょう！\n※お土産屋さんや駅で見つけることができます｡\n本店は中尊寺通りへ｡"
+        text = "105年以上平泉で愛され続けてきた「弁慶の力餅」を食べて､\n内なるエネルギーを蓄えましょう！\n※お土産屋さんや駅で見つけることができます｡\n本店は中尊寺通りへ｡"
         photo = "goodluck_petitinfo.jpg"
 
     elif fortune == "中吉":
-        text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\nおすすめスポット"
+        text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\nおすすめスポット一覧 ***"
         photo = "fairygluck_petitinfo.jpg"
 
     elif fortune == "小吉":
