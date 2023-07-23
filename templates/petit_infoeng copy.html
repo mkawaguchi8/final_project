@@ -5,12 +5,21 @@
     <title>Hiraizu-mikuji</title>
     <style>
         body {
-            width: 165%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
-        /* Set the container div to relative position */
+        .omikuji-paper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .photo {
-            position: relative;
+            margin-bottom: 20px;
         }
 
         /* Position the text div over the image */
