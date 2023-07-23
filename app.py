@@ -119,6 +119,11 @@ def show_top():
     return render_template("index.html")
 
 
+@app.route("/hiku")
+def show_hiku():
+    return render_template("hiku.html")
+
+
 @app.route("/result")
 def show_omikuji():
     (
@@ -287,6 +292,11 @@ def generate_fortune_eng():
 @app.route("/top_eng")
 def show_top_eng():
     return render_template("indexeng.html")
+
+
+@app.route("/hiku_eng")
+def show_hiku_eng():
+    return render_template("hikueng.html")
 
 
 @app.route("/result_eng")
