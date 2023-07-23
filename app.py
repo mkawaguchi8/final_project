@@ -174,7 +174,7 @@ def show_next():
         photo = "fairygluck_petitinfo.jpg"
 
     elif fortune == "小吉":
-        text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季 夏: 高舘から望む北上川と山 秋: 毛越寺の紅葉"
+        text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季\n 夏: 高舘から望む北上川と山\n秋: 毛越寺の紅葉"
         photo = "smallluck_petitinfo.jpg"
 
     else:
