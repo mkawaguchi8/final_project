@@ -158,7 +158,7 @@ def show_next():
     fortune = request.form["fortune"]
 
     if fortune == "大吉":
-        text = "晴れの日に食べるものと言えば、餅御膳！平泉では郷土料理としておもちが有名です。平泉でおもちを食べて、「大吉」のお祝いをしましょう！おめでどーごし※主なもち食提供店一覧 URL"
+        text = "晴れの日に食べるものと言えば、餅御膳！平泉では郷土料理としておもちが有名です。平泉でおもちを食べて、「大吉」のお祝いをしましょう！おめでどーごし ※主なもち食提供店一覧 URL"
         photo = "superbluck_petitinfo.jpg"
 
     elif fortune == "吉":
