@@ -36,7 +36,9 @@
         </div>
         <div class="petit_div">
             <h1>今日のあなたの運勢は...「<span class="omikuji-fortune">{{fortune}}</span>」</h1>
+            {% for text in text.split('\n') %}
             <h2>{{text}}</h2>
+            {% endfor %}
         </div>
     </div>
 </body>
