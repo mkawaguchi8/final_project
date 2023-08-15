@@ -65,13 +65,13 @@ def generate_fortune():
             "努力や頑張りは必要ですが、焦る必要はありません",
             "困難を乗り越えるために、支えてくれる人々の力を借りて立ち向かいましょう",
         ],
-        "【スパルタキャンプ運】": [
-            "素晴らしい結果を残しました！",
-            "三浦さんも喜んでます！",
-            "プログラマーへの第一歩です！",
-            "キャンプが終わっても勉強を続けましょう！",
-            "もう少し頑張れたんじゃない？",
-        ],
+        # "【スパルタキャンプ運】": [
+        # "素晴らしい結果を残しました！",
+        # "三浦さんも喜んでます！",
+        # "プログラマーへの第一歩です！",
+        # "キャンプが終わっても勉強を続けましょう！",
+        # "もう少し頑張れたんじゃない？",
+        # ],
     }
 
     # Shuffle the list of fortunes
@@ -103,7 +103,7 @@ def generate_fortune():
     outcome_6 = outcomes["【学問】"][key]
     outcome_7 = outcomes["【争事】"][key]
     outcome_8 = outcomes["【願望】"][key]
-    outcome_9 = outcomes["【スパルタキャンプ運】"][key]
+    # outcome_9 = outcomes["【スパルタキャンプ運】"][key]
 
     return (
         fortune,
@@ -115,7 +115,7 @@ def generate_fortune():
         outcome_6,
         outcome_7,
         outcome_8,
-        outcome_9,
+        # outcome_9,
     )
 
 
@@ -142,7 +142,7 @@ def show_omikuji():
         outcome_6,
         outcome_7,
         outcome_8,
-        outcome_9,
+        # outcome_9,
     ) = generate_fortune()
     return render_template(
         "result.html",
@@ -155,7 +155,7 @@ def show_omikuji():
         outcome_6=outcome_6,
         outcome_7=outcome_7,
         outcome_8=outcome_8,
-        outcome_9=outcome_9,
+        # outcome_9=outcome_9,
     )
 
 
@@ -178,7 +178,7 @@ def show_next():
         text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\nおすすめスポット一覧 ***"
         photo = "fairygluck_petitinfo.jpg"
         url = ""
-                
+
     elif fortune == "小吉":
         text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季\n 夏: 高舘から望む北上川と山\n秋: 毛越寺の紅葉"
         photo = "smallluck_petitinfo.jpg"
