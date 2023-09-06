@@ -1,9 +1,43 @@
 import random
+import paypayopa
+import time
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+# QR決済画面
 
+API_KEY = "a_VO0IMBderf_sfC9"
+API_SECRET = "+tSBbY27/UXSTTqyPYQWZHvkj+5Bm3b+vK0hIaxpTqI="
+client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
+client.set_assume_merchant("683243483900723200")
+
+# requestの送信情報について
+# => https://www.paypay.ne.jp/opa/doc/jp/v1.0/preauth_capture#operation/createAuth
+
+# request = {
+#     "merchantPaymentId": round(time.time()),  # => 加盟店発番のユニークな決済取引ID
+#     "codeType": "ORDER_QR",
+#     "redirectUrl": "https://hiraizumi-dmo.jp/",  # => ここを任意のフロントのアプリにしてあげれば良さそう
+#     "redirectType": "WEB_LINK",
+#     "orderDescription": "Example - test",
+#     "orderItems": [
+#         {
+#             "name": "test",
+#             "category": "omikuji",
+#             "quantity": 1,
+#             "productId": "0001",
+#             "unitPrice": {"amount": 100, "currency": "JPY"},
+#         }
+#     ],
+#     "amount": {"amount": 100, "currency": "JPY"},
+# }
+
+# response = client.Code.create_qr_code(request)
+# print(response["data"]["url"])
+
+
+# おみくじ画面
 def generate_fortune():
     fortunes = {"大吉": 10, "吉": 30, "中吉": 25, "小吉": 15, "凶": 20}
 
@@ -125,6 +159,11 @@ def show_top():
     return render_template("index.html")
 
 
+@app.route("/payment")
+def show_payment():
+    return render_template("payment")
+
+
 @app.route("/hiku")
 def show_hiku():
     return render_template("hiku.html")
@@ -159,6 +198,7 @@ def show_omikuji():
     )
 
 
+# プチ情報画面
 @app.route("/next", methods=["POST"])
 def show_next():
     fortune = request.form["fortune"]
