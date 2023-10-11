@@ -1,40 +1,45 @@
 import random
+import webbrowser
 import paypayopa
 import time
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, make_response, redirect
 
 app = Flask(__name__)
 
 # QR決済画面
 
-API_KEY = "a_VO0IMBderf_sfC9"
-API_SECRET = "+tSBbY27/UXSTTqyPYQWZHvkj+5Bm3b+vK0hIaxpTqI="
-client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
-client.set_assume_merchant("683243483900723200")
 
-# requestの送信情報について
-# => https://www.paypay.ne.jp/opa/doc/jp/v1.0/preauth_capture#operation/createAuth
+@app.route("/payment")
+def payment():
+    API_KEY = "a_VO0IMBderf_sfC9"
+    API_SECRET = "+tSBbY27/UXSTTqyPYQWZHvkj+5Bm3b+vK0hIaxpTqI="
+    client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
+    client.set_assume_merchant("683243483900723200")
 
-# request = {
-#     "merchantPaymentId": round(time.time()),  # => 加盟店発番のユニークな決済取引ID
-#     "codeType": "ORDER_QR",
-#     "redirectUrl": "https://hiraizumi-dmo.jp/",  # => ここを任意のフロントのアプリにしてあげれば良さそう
-#     "redirectType": "WEB_LINK",
-#     "orderDescription": "Example - test",
-#     "orderItems": [
-#         {
-#             "name": "test",
-#             "category": "omikuji",
-#             "quantity": 1,
-#             "productId": "0001",
-#             "unitPrice": {"amount": 100, "currency": "JPY"},
-#         }
-#     ],
-#     "amount": {"amount": 100, "currency": "JPY"},
-# }
+    redirect_url = url_for("show_hiku", _external=True)
 
-# response = client.Code.create_qr_code(request)
-# print(response["data"]["url"])
+    request = {
+        "merchantPaymentId": round(time.time()),  # => 加盟店発番のユニークな決済取引ID
+        "codeType": "ORDER_QR",
+        "redirectUrl": redirect_url,
+        "redirectType": "WEB_LINK",
+        "orderDescription": "Example - test",
+        "orderItems": [
+            {
+                "name": "test",
+                "category": "omikuji",
+                "quantity": 1,
+                "productId": "0001",
+                "unitPrice": {"amount": 100, "currency": "JPY"},
+            }
+        ],
+        "amount": {"amount": 100, "currency": "JPY"},
+    }
+
+    response = client.Code.create_qr_code(request)
+    qr_code_url = response["data"]["deeplink"]
+
+    return redirect(qr_code_url)
 
 
 # おみくじ画面
@@ -232,7 +237,13 @@ def show_next():
 
 
 def generate_fortune_eng():
-    fortunes = {"Superb Luck": 10, "Good Luck": 30, "Fairly Good Luck": 25, "Small Luck": 15, "Bad Luck": 20}
+    fortunes = {
+        "Superb Luck": 10,
+        "Good Luck": 30,
+        "Fairly Good Luck": 25,
+        "Small Luck": 15,
+        "Bad Luck": 20,
+    }
 
     outcomes = {
         "【DESIRE】": [

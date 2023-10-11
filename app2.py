@@ -20,7 +20,7 @@ def generate_fortune():
 
     outcomes = {
         "2項目": [
-            "【恋愛】素晴らしい出会いや深い絆を築けるでしょう",  # 大吉
+            "【恋愛】松尾芭蕉のように、感じたことを言葉で伝えましょう",  # 大吉
             "【学問】北と東の間がよいでしょう。旅の間に、地元の人と話してみるのも吉",  # 大吉2
             "【恋愛】新たな出会いや関係の発展が期待できるでしょう",  # 吉
             "【学問】予定が変わるかもしれません",  # 吉2
@@ -32,7 +32,7 @@ def generate_fortune():
             "【学問】弁慶のような、旅のお供を探すと吉",  # 凶2
         ],
         "1項目": [
-            "【願望】エネルギーや活力に満ち溢れています",
+            "【願望】藤原秀衡の時代のごとく、大いに栄えるでしょう",
             "【商売】北と東の間がよいでしょう。旅の間に、地元の人と話してみるのも吉",
             "【願望】健康な体と心を大切にすれば大丈夫です",
             "【商売】予定が変わるかもしれません",
@@ -118,21 +118,11 @@ def generate_fortune():
 
     outcome_1 = outcomes["2項目"][key]
     outcome_2 = outcomes["1項目"][key]
-    # outcome_3 = outcomes["【旅行】"][key]
-    # outcome_4 = outcomes["【商売】"][key]
-    # outcome_5 = outcomes["【学問】"][key]
-    # outcome_6 = outcomes["【争事】"][key]
-    # outcome_7 = outcomes["【願望】"][key]
 
     return (
         fortune,
         outcome_1,
         outcome_2,
-        # outcome_3,
-        # outcome_4,
-        # outcome_5,
-        # outcome_6,
-        # outcome_7,
     )
 
 
@@ -158,22 +148,12 @@ def show_omikuji():
         fortune,
         outcome_1,
         outcome_2,
-        # outcome_3,
-        # outcome_4,
-        # outcome_5,
-        # outcome_6,
-        # outcome_7,
     ) = generate_fortune()
     return render_template(
         "result2.html",
         fortune=fortune,
         outcome_1=outcome_1,
         outcome_2=outcome_2,
-        # outcome_3=outcome_3,
-        # outcome_4=outcome_4,
-        # outcome_5=outcome_5,
-        # outcome_6=outcome_6,
-        # outcome_7=outcome_7,
     )
 
 
@@ -182,23 +162,23 @@ def show_omikuji():
 def show_next():
     fortune = request.form["fortune"]
 
-    if fortune == "大吉":
+    if fortune == "大吉" or "大吉2":
         text = "晴れの日に食べるものと言えば、餅御膳！\n平泉では郷土料理としておもちが有名です。\n平泉でおもちを食べて、「大吉」のお祝いをしましょう！\nおめでどーごし!\n主なもち料理提供店一覧:"
         url = "https://hiraizu-meets.com/gourmet/"  # 実際のURLに置き換えてください
         # text = text.format(url)
         photo = "superbluck_petitinfo.jpg"
 
-    elif fortune == "吉":
+    elif fortune == "吉" or "吉2":
         text = "105年以上平泉で愛され続けてきた「弁慶力餅」を食べて､\n内なるエネルギーを蓄えましょう！\n※お土産屋さんや駅で見つけることができます｡\n本店は中尊寺通りへ｡"
         photo = "goodluck_petitinfo.jpg"
         url = ""
 
-    elif fortune == "中吉":
+    elif fortune == "中吉" or "中吉2":
         text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\nおすすめスポット一覧 ***"
         photo = "fairygluck_petitinfo.jpg"
         url = ""
 
-    elif fortune == "小吉":
+    elif fortune == "小吉" or "小吉2":
         text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季\n 夏: 高舘から望む北上川と山\n秋: 毛越寺の紅葉"
         photo = "smallluck_petitinfo.jpg"
         url = ""
