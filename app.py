@@ -168,6 +168,11 @@ def show_top():
     return render_template("index.html")
 
 
+@app.route("/info")
+def show_info():
+    return render_template("info.html")
+
+
 @app.route("/payment")
 def show_payment():
     return render_template("payment")
@@ -238,9 +243,7 @@ def show_next():
         photo = "badluck_petitinfo.jpg"
         url = ""
 
-    return render_template(
-        "petit_info.html", fortune=fortune, text=text, photo=photo, url=url
-    )
+    return render_template("petit_info.html", fortune=fortune, text=text, photo=photo, url=url)
 
 
 def generate_fortune_eng():
@@ -421,9 +424,7 @@ def show_next_eng():
         text = "Let's gaze at the sunset sinking behind Mount Kinkazan from Muryokoin, one of the World Heritage sites. It will surely purify our hearts. Enjoy the moment!"
         photo = "badluck_petitinfo.jpg"
 
-    return render_template(
-        "petit_infoeng.html", fortune=fortune, text=text, photo=photo
-    )
+    return render_template("petit_infoeng.html", fortune=fortune, text=text, photo=photo)
 
 
 if __name__ == "__main__":
