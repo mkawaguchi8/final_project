@@ -1,22 +1,27 @@
 import random
+import os
 import webbrowser
 import paypayopa
 import time
 from flask import Flask, render_template, request, url_for, make_response, redirect
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
 # QR決済画面
 
+# # env読み込み
+load_dotenv()
+
 
 @app.route("/payment")
 def payment():
-    API_KEY = "a_VO0IMBderf_sfC9"
-    API_SECRET = "+tSBbY27/UXSTTqyPYQWZHvkj+5Bm3b+vK0hIaxpTqI="
+    API_KEY = os.environ["API_KEY"]
+    API_SECRET = os.environ["API_SECRET"]
     client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
-    client.set_assume_merchant("683243483900723200")
+    client.set_assume_merchant(os.environ["MERCHANT_ID"])
 
-    redirect_url = url_for("show_hiku", _external=True)
+    redirect_url = url_for("show_hiku", _external=True).replace("/index.cgi/payment", "")
 
     request = {
         "merchantPaymentId": round(time.time()),  # => 加盟店発番のユニークな決済取引ID
@@ -233,7 +238,9 @@ def show_next():
         photo = "badluck_petitinfo.jpg"
         url = ""
 
-    return render_template("petit_info.html", fortune=fortune, text=text, photo=photo, url=url)
+    return render_template(
+        "petit_info.html", fortune=fortune, text=text, photo=photo, url=url
+    )
 
 
 def generate_fortune_eng():
@@ -414,7 +421,9 @@ def show_next_eng():
         text = "Let's gaze at the sunset sinking behind Mount Kinkazan from Muryokoin, one of the World Heritage sites. It will surely purify our hearts. Enjoy the moment!"
         photo = "badluck_petitinfo.jpg"
 
-    return render_template("petit_infoeng.html", fortune=fortune, text=text, photo=photo)
+    return render_template(
+        "petit_infoeng.html", fortune=fortune, text=text, photo=photo
+    )
 
 
 if __name__ == "__main__":
