@@ -229,12 +229,12 @@ def show_next():
         url = ""
 
     elif fortune == "中吉":
-        text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\nおすすめスポット一覧 ***"
+        text = "かつては京都についで2番目に栄えていたと言われる平泉｡\n心が平穏になれる静かな平泉を感じられるスポットで､\n平泉の空気を思いっきり吸ってみましょう｡\n平泉の古民家\n・中尊寺の月見坂参道内\n・平泉倶楽部"
         photo = "fairygluck_petitinfo.jpg"
         url = ""
 
     elif fortune == "小吉":
-        text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季\n 夏: 高舘から望む北上川と山\n秋: 毛越寺の紅葉"
+        text = "平泉で四季を感じるスポットへ行ってみましょう｡ \nきっと平泉の極楽浄土を感じられることでしょう｡ \nおすすめ平泉の四季\n 春: 観自在王院跡のしだれ桜\n夏: 高舘から望む北上川と山 (写真のスポット)\n秋: 毛越寺 浄土庭園の紅葉\n冬: 町民愛用の悠久の湯平泉温泉"
         photo = "smallluck_petitinfo.jpg"
         url = ""
 
@@ -252,7 +252,7 @@ def generate_fortune_eng():
         "Good Luck": 30,
         "Fairly Good Luck": 25,
         "Small Luck": 15,
-        "Bad Luck": 20,
+        "Unfavorable Luck": 20,
     }
 
     outcomes = {
@@ -405,7 +405,7 @@ def show_next_eng():
     fortune = request.form["fortune"]
 
     if fortune == "Superb Luck":
-        text = "Speaking of what to eat on a sunny day, it's mochi gozen! In Hiraizumi, mochi (rice cakes) is famous as a local dish. Let's have mochi in Hiraizumi and celebrate with Great Fortune! Congratulations!"
+        text = "Speaking of what to eat on a great day, it's mochi gozen! In Hiraizumi, mochi (rice cakes) is famous as a local dish. Let's have mochi in Hiraizumi and celebrate with Great Fortune! Congratulations!"
         photo = "superbluck_petitinfo.jpg"
 
     elif fortune == "Good Luck":
@@ -413,11 +413,11 @@ def show_next_eng():
         photo = "goodluck_petitinfo.jpg"
 
     elif fortune == "Fairly Good Luck":
-        text = "Hiraizumi, once said to be the second most prosperous city after Kyoto. Let's feel the serene and quiet atmosphere of Hiraizumi, where our hearts can find tranquility. Take a deep breath of Hiraizumi's air and immerse yourself in its essence. Recommended to visit Genbikei Gorge and Mount Kinkeisan."
+        text = "Hiraizumi, once said to be the second most prosperous city after Kyoto. Let's feel the serene and quiet atmosphere of Hiraizumi, where our hearts can find tranquility. Take a deep breath of Hiraizumi's air and immerse yourself in its essence. Recommended to visit Japanese traditional houses and Takkoku no Iwaya Temple."
         photo = "fairygluck_petitinfo.jpg"
 
     elif fortune == "Small Luck":
-        text = "Let's visit the spots in Hiraizumi to experience the four seasons. You will surely feel the blissful paradise of Hiraizumi. Recommended to see the view of the Kitakami River and the mountains from Takadate in the summer, as well as the leaf foliage at Motsuji Temple in the fall."
+        text = "Let's visit the spots in Hiraizumi to experience the four seasons. You will surely feel the blissful paradise of Hiraizumi. \nRecommended to see the Weeping Cherry Blossom at Kanjizaioin, one of the World Heritage sites(spring), the view of the Kitakami River and the mountains from Takadate(summer), the leaf foliage at Motsuji Temple(fall) and Hiraizumi Onsen beloved by local people(winter)."
         photo = "smallluck_petitinfo.jpg"
 
     else:
