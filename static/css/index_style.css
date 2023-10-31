@@ -61,6 +61,24 @@ a.btn--language {
   bottom: 0.4%;
 }
 
+a.btn--commerce {
+  color: #fff;
+  background-color: #7b1439;
+  border-bottom: 5px solid #7b1439;
+  display: block;
+  /* height: 40px; */
+  width: 20.2%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 40px;
+  font-family: "Arial", "メイリオ";
+  font-size: 15px;
+  text-decoration: unset;
+  position: absolute;
+  left: 0.5%;
+  bottom: 0.4%;
+}
+
 a.btn--orange:hover {
   margin-top: 3px;
   color: #fff;

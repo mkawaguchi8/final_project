@@ -3,8 +3,9 @@ import os
 import webbrowser
 import paypayopa
 import time
-from flask import Flask, render_template, request, url_for, make_response, redirect
+from flask import Flask, render_template, request, url_for, redirect
 from dotenv import load_dotenv
+import requests
 
 app = Flask(__name__)
 
@@ -21,9 +22,20 @@ def payment():
     client = paypayopa.Client(auth=(API_KEY, API_SECRET), production_mode=False)
     client.set_assume_merchant(os.environ["MERCHANT_ID"])
 
-    redirect_url = url_for("show_hiku", _external=True).replace("/index.cgi/payment", "")
+    referrer_url = request.referrer
 
-    request = {
+    if referrer_url is not None:
+        # 'eng'を含むかどうかで場合分け
+        if "eng" in referrer_url:
+            # 'eng'を含む場合の処理
+            redirect_url = url_for("show_hiku_eng", _external=True).replace("/index.cgi/payment", "")
+        else:
+            # 'eng'を含まない場合の処理
+            redirect_url = url_for("show_hiku", _external=True).replace("/index.cgi/payment", "")
+    else:
+        redirect_url = url_for("show_hiku", _external=True).replace("/index.cgi/payment", "")
+
+    request_p = {
         "merchantPaymentId": round(time.time()),  # => 加盟店発番のユニークな決済取引ID
         "codeType": "ORDER_QR",
         "redirectUrl": redirect_url,
@@ -41,7 +53,7 @@ def payment():
         "amount": {"amount": 100, "currency": "JPY"},
     }
 
-    response = client.Code.create_qr_code(request)
+    response = client.Code.create_qr_code(request_p)
     qr_code_url = response["data"]["deeplink"]
 
     return redirect(qr_code_url)
@@ -173,11 +185,6 @@ def show_info():
     return render_template("info.html")
 
 
-@app.route("/payment")
-def show_payment():
-    return render_template("payment")
-
-
 @app.route("/hiku")
 def show_hiku():
     return render_template("hiku.html")
@@ -225,7 +232,7 @@ def show_next():
 
     elif fortune == "吉":
         text = "105年以上平泉で愛され続けてきた「弁慶力餅」を食べて､\n内なるエネルギーを蓄えましょう！\n※お土産屋さんや駅で見つけることができます｡\n本店は中尊寺通りへ｡"
-        photo = "goodluck_petitinfo.jpg"
+        photo = "goodluck_benkei_petitinfo.JPG"
         url = ""
 
     elif fortune == "中吉":
@@ -410,7 +417,7 @@ def show_next_eng():
 
     elif fortune == "Good Luck":
         text = "Let's eat Benkei-no-Chikara-Mochi, which has been loved in Hiraizumi for over 105 years, and store your inner energy! You can find it at souvenir shops or the station. The main store is located on Chusonji Street."
-        photo = "goodluck_petitinfo.jpg"
+        photo = "goodluck_benkei_petitinfo.JPG"
 
     elif fortune == "Fairly Good Luck":
         text = "Hiraizumi, once said to be the second most prosperous city after Kyoto. Let's feel the serene and quiet atmosphere of Hiraizumi, where our hearts can find tranquility. Take a deep breath of Hiraizumi's air and immerse yourself in its essence. Recommended to visit Japanese traditional houses and Takkoku no Iwaya Temple."
